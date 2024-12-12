@@ -26,4 +26,8 @@ export class Card {
     if (this.value > other.value) return 1;
     if (this.value < other.value) return -1;
   };
+
+  is = (other: Card) => {
+    return this.value === other.value && this.suit === other.suit;
+  };
 }

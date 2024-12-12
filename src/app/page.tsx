@@ -1,9 +1,8 @@
 import { Card, Deck } from "./classes";
 import { PlayingCard } from "./components";
-import { shuffleArray } from "./utils";
 
 export default function Home() {
-  const deck: Deck = new Deck();
+  const deck: Deck = new Deck(true);
   deck.shuffleDeck(3);
   const hand: Card[] = [];
   for (let i = 0; i < 5; i++) {

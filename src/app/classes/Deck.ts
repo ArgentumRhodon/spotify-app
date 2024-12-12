@@ -22,15 +22,13 @@ const validSuits: Suit[] = ["diamonds", "clubs", "hearts", "spades"];
 
 export class Deck {
   public cards: Card[] = [];
-  public cardsDrawn: Card[] = [];
 
-  constructor() {
-    this.buildDeck();
+  constructor(buildDeck: boolean = false) {
+    if (buildDeck) this.buildDeck();
   }
 
   buildDeck() {
     this.cards = [];
-    this.cardsDrawn = [];
 
     validSuits.forEach((suit) => {
       validRanks.forEach((rank) => {
@@ -41,12 +39,16 @@ export class Deck {
 
   drawCard() {
     if (!this.isEmpty()) {
-      const topCard = this.cards.pop();
-      this.cardsDrawn.push(topCard!);
-      return topCard!;
+      return this.cards.pop()!;
     }
 
     return null;
+  }
+
+  addCard(card: Card) {
+    if (this.cards.find((c) => c.is(card))) return;
+
+    this.cards.push(card);
   }
 
   shuffleDeck(times: number = 1) {
