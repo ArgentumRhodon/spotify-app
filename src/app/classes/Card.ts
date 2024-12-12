@@ -18,7 +18,7 @@ export class Card {
     this.rank = rank;
     this.suit = suit;
     this.value = rankToValue(rank);
-    this.unicode = `${symbolUnicodes[this.suit]}${rank}}`;
+    this.unicode = symbolUnicodes[this.suit];
   }
 
   compare = (other: Card) => {
