@@ -43,7 +43,7 @@ export class Deck {
     if (!this.isEmpty()) {
       const topCard = this.cards.pop();
       this.cardsDrawn.push(topCard!);
-      return topCard;
+      return topCard!;
     }
 
     return null;
