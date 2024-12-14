@@ -32,6 +32,7 @@ test("player hands have no repeats", () => {
 test("player hands make valid deck", () => {
   let deck = new Deck(true);
   let allCards: Card[] = [];
+
   gameStore.players.forEach((player) => {
     allCards = allCards.concat(player.hand);
   });

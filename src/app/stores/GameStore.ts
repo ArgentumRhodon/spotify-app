@@ -45,9 +45,11 @@ class GameStore {
 
   // Player with the 2 of D starts the game
   determineStartingPlayer() {
-    this.currentPlayerId = this.players.findIndex((player) => {
-      player.hand.some((card) => card.rank === "2" && card.suit === "diamonds");
-    });
+    this.currentPlayerId = this.players.findIndex((player) =>
+      player.hand.some((card) => card.rank === "2" && card.suit === "diamonds")
+    );
+
+    console.log(this.currentPlayerId);
   }
 }
 
