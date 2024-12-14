@@ -1,5 +1,5 @@
 import { Rank, Suit } from "../types";
-import { rankToValue } from "../utils";
+import { rankToValue, suitToValue } from "../utils";
 
 const symbolUnicodes = {
   clubs: "\u2663",
@@ -12,12 +12,14 @@ export class Card {
   public rank: Rank;
   public suit: Suit;
   public value: number;
+  public suitValue: number;
   public unicode: string;
 
   constructor(rank: Rank, suit: Suit) {
     this.rank = rank;
     this.suit = suit;
     this.value = rankToValue(rank);
+    this.suitValue = suitToValue(suit);
     this.unicode = symbolUnicodes[this.suit];
   }
 

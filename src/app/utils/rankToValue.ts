@@ -1,6 +1,6 @@
 import { Rank } from "../types";
 
-const valueCards = {
+const valueCards: Record<Rank, number> = {
   "2": 2,
   "3": 3,
   "4": 4,
