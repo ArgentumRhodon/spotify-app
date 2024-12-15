@@ -6,13 +6,15 @@ import { Card } from "../classes";
 const PlayingCard = dynamic(() => import("./PlayingCard"), { ssr: false });
 
 const Hand = ({ hand }: { hand: Card[] }) => {
-  return (
-    <div className="flex flex-wrap justify-center gap-1">
-      {hand.map((card, idx) => (
-        <PlayingCard key={idx} card={card} />
-      ))}
-    </div>
-  );
+    return (
+        <div className="grid grid-cols-[repeat(13,100px)] justify-center gap-1">
+            {hand.map((card, idx) => (
+                <button key={idx}>
+                    <PlayingCard card={card} />
+                </button>
+            ))}
+        </div>
+    );
 };
 
 export default Hand;
