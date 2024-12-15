@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 import { Card, Deck } from "../classes";
 import { Player } from "../types/Player";
 import { Mode } from "../types";
+import { cardSort } from "../utils";
 
 class GameStore {
   players: Player[] = [];
@@ -40,6 +41,8 @@ class GameStore {
         const card = deck.drawCard();
         if (card) player.hand.push(card);
       }
+
+      player.hand.sort(cardSort);
     });
   }
 

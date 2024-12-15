@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Switch } from "@skeletonlabs/skeleton-react";
 import { Moon as IconMoon, Sun as IconSun } from "lucide-react";
 
-export const Lightswitch = () => {
+const Lightswitch = () => {
   const { setTheme, resolvedTheme } = useTheme();
   const [mode, setMode] = useState(resolvedTheme === "light");
   const [mounted, setMounted] = useState(false);
@@ -35,3 +35,5 @@ export const Lightswitch = () => {
     <Switch name="placeholder" key="placeholder" />
   );
 };
+
+export default Lightswitch;
